@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "PortableWhisper",
+  "productName": "PortableTranscribe",
   "version": "0.1.0",
-  "identifier": "com.portablewhisper.dev",
+  "identifier": "com.portabletranscribe.dev",
   "build": {
     "frontendDist": "../dist",
     "beforeDevCommand": "",
@@ -12,7 +12,7 @@
     "windows": [
       {
         "label": "main",
-        "title": "PortableWhisper - Settings",
+        "title": "PortableTranscribe - Settings",
         "width": 880,
         "height": 700,
         "minWidth": 880,

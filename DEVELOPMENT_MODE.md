@@ -1,6 +1,6 @@
 management
 
-# 🚀 PortableWhisper Development Mode Guide
+# 🚀 PortableTranscribe Development Mode Guide
 
 ## Overview
 
@@ -12,12 +12,12 @@ Tauri provides excellent hot reload development capabilities, similar to Canva's
 
 ```bash
 # Terminal 1: Start Backend (Python)
-cd PortableWhisper/backend
+cd PortableTranscribe/backend
 venv\Scripts\activate
 python main.py
 
 # Terminal 2: Start Frontend with Hot Reload
-cd PortableWhisper/frontend/src-tauri
+cd PortableTranscribe/frontend/src-tauri
 cargo tauri dev
 ```
 

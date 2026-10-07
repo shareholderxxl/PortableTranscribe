@@ -1,4 +1,4 @@
-# PortableWhisper Backend
+# PortableTranscribe Backend
 
 Python FastAPI server for local speech-to-text processing.
 

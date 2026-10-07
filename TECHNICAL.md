@@ -1,10 +1,10 @@
 # 🔧 Technical Documentation
 
-Comprehensive technical guide for PortableWhisper developers and contributors.
+Comprehensive technical guide for PortableTranscribe developers and contributors.
 
 ## 🏗️ Architecture Overview
 
-PortableWhisper uses a **sidecar architecture** with a Rust frontend and Python backend:
+PortableTranscribe uses a **sidecar architecture** with a Rust frontend and Python backend:
 
 ```
 ┌─────────────────┐    HTTP/JSON    ┌─────────────────┐
@@ -45,7 +45,7 @@ PortableWhisper uses a **sidecar architecture** with a Rust frontend and Python 
 ## 📁 Project Structure
 
 ```
-PortableWhisper/
+PortableTranscribe/
 ├── frontend/                    # Tauri frontend
 │   ├── src-tauri/              # Rust source
 │   │   ├── src/
@@ -193,7 +193,7 @@ pub struct AppState {
 
 ```json
 {
-  "productName": "PortableWhisper",
+  "productName": "PortableTranscribe",
   "version": "0.1.0",
   "identifier": "com.whisper4windows.dev",
   "app": {

@@ -1,7 +1,7 @@
-# Development script for PortableWhisper
+# Development script for PortableTranscribe
 # Runs both frontend (Tauri) and backend (Python) in development mode
 
-Write-Host "🚀 Starting PortableWhisper Development Environment" -ForegroundColor Green
+Write-Host "🚀 Starting PortableTranscribe Development Environment" -ForegroundColor Green
 
 # Check if Tauri CLI is available
 if (-not (Get-Command "cargo-tauri" -ErrorAction SilentlyContinue)) {

@@ -1,8 +1,8 @@
-# 🎙️ PortableWhisper
+# 🎙️ PortableTranscribe
 
 **Your voice, transcribed instantly — 100% private, no internet required.**
 
-PortableWhisper is a local, offline speech-to-text tool for Windows. Press a hotkey,
+PortableTranscribe is a local, offline speech-to-text tool for Windows. Press a hotkey,
 speak, and your words appear wherever your cursor is — emails, notes, chats, code.
 Everything runs on your machine; nothing is ever sent to the cloud.
 
@@ -24,10 +24,10 @@ Everything runs on your machine; nothing is ever sent to the cloud.
 
 ## 🚀 Download & Run
 
-1. Download the latest **PortableWhisper** ZIP from the [Releases](../../releases) page.
-2. Unpack it to any folder (e.g. `C:\PortableWhisper`).
+1. Download the latest **PortableTranscribe** ZIP from the [Releases](../../releases) page.
+2. Unpack it to any folder (e.g. `C:\PortableTranscribe`).
 3. Place the model files (see below) into the `model/` folder.
-4. Double-click **`PortableWhisper.exe`**.
+4. Double-click **`PortableTranscribe.exe`**.
 
 That's it — no installation, no setup wizard.
 
@@ -35,13 +35,13 @@ That's it — no installation, no setup wizard.
 
 ## 🧠 Model Setup
 
-PortableWhisper ships **without a bundled model** to keep the download small (~200 MB).
+PortableTranscribe ships **without a bundled model** to keep the download small (~105 MB).
 You place the ONNX model files yourself, once.
 
 ### Required files in `model/`
 
 ```
-PortableWhisper/
+PortableTranscribe/
 └── model/
     ├── encoder-model.int4.onnx      (~373 MB, int4 encoder)
     ├── decoder_joint-model.int8.onnx (~18 MB, int8 decoder+joint)
@@ -62,7 +62,7 @@ hf download efederici/parakeet-tdt-0.6b-v3-onnx-int4 --local-dir model/
 
 1. Open: https://huggingface.co/efederici/parakeet-tdt-0.6b-v3-onnx-int4
 2. Download `encoder-model.int4.onnx`, `decoder_joint-model.int8.onnx`, and `vocab.txt`.
-3. Copy them into the `model/` folder next to `PortableWhisper.exe`.
+3. Copy them into the `model/` folder next to `PortableTranscribe.exe`.
 
 **Alternative (int8):** `istupakov/parakeet-tdt-0.6b-v3-onnx` — same procedure,
 different quantization. Both work; int4 is smaller and faster on CPU.
@@ -88,7 +88,7 @@ Settings (F9 default, language, microphone, theme, GPU) are available from the
 - **OS:** Windows 10 / 11 (64-bit)
 - **RAM:** 8 GB minimum, 16 GB recommended
 - **Microphone:** built-in or external
-- **Disk:** ~600 MB (app + model)
+- **Disk:** ~520 MB (app + model)
 
 ## 🛠️ Troubleshooting
 
@@ -103,13 +103,13 @@ Settings (F9 default, language, microphone, theme, GPU) are available from the
 
 **Hotkey not working?**
 - The app must be running (visible in the system tray).
-- Some applications block global hotkeys — try restarting PortableWhisper.
+- Some applications block global hotkeys — try restarting PortableTranscribe.
 
 ---
 
 ## 🧰 For Developers
 
-PortableWhisper is built with:
+PortableTranscribe is built with:
 
 - **Backend:** Python 3.11 + FastAPI, speech recognition via [`onnx-asr`](https://github.com/istupakov/onnx-asr)
   (pure Python, MIT) on ONNX Runtime.
@@ -136,4 +136,4 @@ Based on the original project [Whisper4Windows](https://github.com/BaderJabri/Wh
 
 ---
 
-**Ready to dictate? Download PortableWhisper, drop in the model, and start speaking. 🎤**
+**Ready to dictate? Download PortableTranscribe, drop in the model, and start speaking. 🎤**

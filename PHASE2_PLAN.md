@@ -340,8 +340,8 @@ Dies gewährleistet:
 * **Updates:** Neue App-Version = nur `.exe` austauschen, Modell bleibt
 
 ```
-PortableWhisper/
-├── PortableWhisper.exe
+PortableTranscribe/
+├── PortableTranscribe.exe
 ├── binaries/
 │   └── whisper-backend.exe
 └── data/

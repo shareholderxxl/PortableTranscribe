@@ -1,6 +1,6 @@
 # -*- mode: python ; coding: utf-8 -*-
 # whisper-backend.spec
-# PyInstaller-Spezifikation für das PortableWhisper-Backend (Sidecar).
+# PyInstaller-Spezifikation für das PortableTranscribe-Backend (Sidecar).
 #
 # Phase-2-Vorgaben (siehe PHASE2_PLAN.md):
 #   - Modell wird NICHT eingebettet (datas=[]); User kopiert ONNX-Dateien

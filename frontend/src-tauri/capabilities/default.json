@@ -1,7 +1,7 @@
 {
   "$schema": "../gen/schemas/desktop-schema.json",
   "identifier": "default",
-  "description": "Default permissions for PortableWhisper",
+  "description": "Default permissions for PortableTranscribe",
   "windows": ["main"],
   "permissions": [
     "core:default",

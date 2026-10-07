@@ -1,6 +1,6 @@
-# PortableWhisper - Lizenzinformationen
+# PortableTranscribe - Lizenzinformationen
 
-## PortableWhisper
+## PortableTranscribe
 
 **Lizenz:** MIT License
 

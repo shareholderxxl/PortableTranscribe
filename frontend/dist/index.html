@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PortableWhisper</title>
+    <title>PortableTranscribe</title>
     <style>
         * {
             margin: 0;
@@ -944,13 +944,13 @@
             <h1 class="section-title">Lizenzen</h1>
 
             <div class="config-section">
-                <h3 class="config-section-title">PortableWhisper</h3>
+                <h3 class="config-section-title">PortableTranscribe</h3>
                 <div class="config-row-description" style="line-height: 1.7;">
                     <p><strong>Lizenz:</strong> MIT License</p>
                     <p><strong>Urheber:</strong> Copyright (c) 2024 ShareholderXXL</p>
                     <p><strong>Version:</strong> 2.05</p>
                     <p><strong>Fork attribution:</strong> Basiert auf dem Originalprojekt von Bader Aljabri.</p>
-                    <p><strong>GitHub:</strong> <a href="https://github.com/shareholderxxl/PortableWhisper" onclick="openExternalLink(event, 'https://github.com/shareholderxxl/PortableWhisper')">github.com/shareholderxxl/PortableWhisper</a></p>
+                    <p><strong>GitHub:</strong> <a href="https://github.com/shareholderxxl/PortableTranscribe" onclick="openExternalLink(event, 'https://github.com/shareholderxxl/PortableTranscribe')">github.com/shareholderxxl/PortableTranscribe</a></p>
                     <p><strong>Vollständiger Lizenztext:</strong> Siehe <code>LICENSE</code> Datei im App-Ordner.</p>
                 </div>
             </div>
@@ -1373,108 +1373,34 @@
             }
         }
 
-        // Language dropdown data (99 Whisper languages)
+        // Language dropdown data: 25 languages supported by Parakeet TDT 0.6B v3 (auto-detect pinned first)
         const LANGUAGES = [
             { code: 'auto', name: 'Auto-Detect', pinned: true },
             { code: 'en', name: 'English' },
-            { code: 'zh', name: 'Chinese' },
             { code: 'de', name: 'German' },
             { code: 'es', name: 'Spanish' },
             { code: 'ru', name: 'Russian' },
-            { code: 'ko', name: 'Korean' },
             { code: 'fr', name: 'French' },
-            { code: 'ja', name: 'Japanese' },
             { code: 'pt', name: 'Portuguese' },
-            { code: 'tr', name: 'Turkish' },
             { code: 'pl', name: 'Polish' },
-            { code: 'ca', name: 'Catalan' },
             { code: 'nl', name: 'Dutch' },
-            { code: 'ar', name: 'Arabic' },
             { code: 'sv', name: 'Swedish' },
             { code: 'it', name: 'Italian' },
-            { code: 'id', name: 'Indonesian' },
-            { code: 'hi', name: 'Hindi' },
             { code: 'fi', name: 'Finnish' },
-            { code: 'vi', name: 'Vietnamese' },
-            { code: 'he', name: 'Hebrew' },
             { code: 'uk', name: 'Ukrainian' },
             { code: 'el', name: 'Greek' },
-            { code: 'ms', name: 'Malay' },
             { code: 'cs', name: 'Czech' },
             { code: 'ro', name: 'Romanian' },
             { code: 'da', name: 'Danish' },
             { code: 'hu', name: 'Hungarian' },
-            { code: 'ta', name: 'Tamil' },
-            { code: 'no', name: 'Norwegian' },
-            { code: 'th', name: 'Thai' },
-            { code: 'ur', name: 'Urdu' },
             { code: 'hr', name: 'Croatian' },
             { code: 'bg', name: 'Bulgarian' },
             { code: 'lt', name: 'Lithuanian' },
-            { code: 'la', name: 'Latin' },
-            { code: 'mi', name: 'Maori' },
-            { code: 'ml', name: 'Malayalam' },
-            { code: 'cy', name: 'Welsh' },
             { code: 'sk', name: 'Slovak' },
-            { code: 'te', name: 'Telugu' },
-            { code: 'fa', name: 'Persian' },
             { code: 'lv', name: 'Latvian' },
-            { code: 'bn', name: 'Bengali' },
-            { code: 'sr', name: 'Serbian' },
-            { code: 'az', name: 'Azerbaijani' },
             { code: 'sl', name: 'Slovenian' },
-            { code: 'kn', name: 'Kannada' },
             { code: 'et', name: 'Estonian' },
-            { code: 'mk', name: 'Macedonian' },
-            { code: 'br', name: 'Breton' },
-            { code: 'eu', name: 'Basque' },
-            { code: 'is', name: 'Icelandic' },
-            { code: 'hy', name: 'Armenian' },
-            { code: 'ne', name: 'Nepali' },
-            { code: 'mn', name: 'Mongolian' },
-            { code: 'bs', name: 'Bosnian' },
-            { code: 'kk', name: 'Kazakh' },
-            { code: 'sq', name: 'Albanian' },
-            { code: 'sw', name: 'Swahili' },
-            { code: 'gl', name: 'Galician' },
-            { code: 'mr', name: 'Marathi' },
-            { code: 'pa', name: 'Punjabi' },
-            { code: 'si', name: 'Sinhala' },
-            { code: 'km', name: 'Khmer' },
-            { code: 'sn', name: 'Shona' },
-            { code: 'yo', name: 'Yoruba' },
-            { code: 'so', name: 'Somali' },
-            { code: 'af', name: 'Afrikaans' },
-            { code: 'oc', name: 'Occitan' },
-            { code: 'ka', name: 'Georgian' },
-            { code: 'be', name: 'Belarusian' },
-            { code: 'tg', name: 'Tajik' },
-            { code: 'sd', name: 'Sindhi' },
-            { code: 'gu', name: 'Gujarati' },
-            { code: 'am', name: 'Amharic' },
-            { code: 'yi', name: 'Yiddish' },
-            { code: 'lo', name: 'Lao' },
-            { code: 'uz', name: 'Uzbek' },
-            { code: 'fo', name: 'Faroese' },
-            { code: 'ht', name: 'Haitian Creole' },
-            { code: 'ps', name: 'Pashto' },
-            { code: 'tk', name: 'Turkmen' },
-            { code: 'nn', name: 'Nynorsk' },
-            { code: 'mt', name: 'Maltese' },
-            { code: 'sa', name: 'Sanskrit' },
-            { code: 'lb', name: 'Luxembourgish' },
-            { code: 'my', name: 'Myanmar' },
-            { code: 'bo', name: 'Tibetan' },
-            { code: 'tl', name: 'Tagalog' },
-            { code: 'mg', name: 'Malagasy' },
-            { code: 'as', name: 'Assamese' },
-            { code: 'tt', name: 'Tatar' },
-            { code: 'haw', name: 'Hawaiian' },
-            { code: 'ln', name: 'Lingala' },
-            { code: 'ha', name: 'Hausa' },
-            { code: 'ba', name: 'Bashkir' },
-            { code: 'jw', name: 'Javanese' },
-            { code: 'su', name: 'Sundanese' }
+            { code: 'mt', name: 'Maltese' }
         ];
 
         let selectedLanguageCode = 'de';
@@ -1620,7 +1546,7 @@
             dialog.innerHTML = `
                 <div class="dialog-content">
                     <h2>❌ Modell nicht gefunden</h2>
-                    <p>PortableWhisper benötigt ein Parakeet ONNX-Modell, aber <code>model/</code> ist leer oder fehlt.</p>
+                    <p>PortableTranscribe benötigt ein Parakeet ONNX-Modell, aber <code>model/</code> ist leer oder fehlt.</p>
                     <h3>So installieren Sie das Modell:</h3>
                     <div class="install-method">
                         <strong>Option A: HuggingFace CLI (empfohlen)</strong>
@@ -1992,7 +1918,7 @@ hf download efederici/parakeet-tdt-0.6b-v3-onnx-int4 --local-dir model/</pre>
 
         // Initialize
         document.addEventListener('DOMContentLoaded', async () => {
-            console.log('🚀 PortableWhisper UI Loaded');
+            console.log('🚀 PortableTranscribe UI Loaded');
 
             // Initialize all dropdowns
             initializeLanguageDropdown();
@@ -2070,10 +1996,15 @@ hf download efederici/parakeet-tdt-0.6b-v3-onnx-int4 --local-dir model/</pre>
                 const { invoke } = window.__TAURI_INTERNALS__;
                 const language = await invoke('get_language');
                 if (language) {
-                    selectedLanguageCode = language;
                     const lang = LANGUAGES.find(l => l.code === language);
                     if (lang) {
+                        selectedLanguageCode = language;
                         document.getElementById('selectedLanguage').textContent = lang.name;
+                    } else {
+                        // Stored language is not among the 25 supported by Parakeet TDT 0.6B v3
+                        selectedLanguageCode = 'de';
+                        document.getElementById('selectedLanguage').textContent = 'German';
+                        await invoke('set_language', { language: 'de' });
                     }
                     initializeLanguageDropdown(); // Refresh to show selected
                 }

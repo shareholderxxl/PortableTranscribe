@@ -1,4 +1,4 @@
-# PortableWhisper Backend Dependencies
+# PortableTranscribe Backend Dependencies
 # Phase 2: Parakeet TDT v3 + onnx-asr
 # Compatible with Python 3.11 (PyInstaller) / 3.13 (dev)
 

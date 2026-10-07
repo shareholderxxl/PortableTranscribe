@@ -1,6 +1,6 @@
 # 📦 Installation Guide
 
-Complete setup guide for PortableWhisper - from first-time installation to GPU acceleration.
+Complete setup guide for PortableTranscribe - from first-time installation to GPU acceleration.
 
 ---
 
@@ -16,7 +16,7 @@ Complete setup guide for PortableWhisper - from first-time installation to GPU a
 
 **Option 1: MSI Installer (Recommended for End Users)**
 
-1. Download `PortableWhisper_0.1.0_x64_en-US.msi`
+1. Download `PortableTranscribe_0.1.0_x64_en-US.msi`
 2. Run the installer
 3. GPU acceleration is automatically included - no additional setup needed!
 4. Launch from Start Menu or Desktop shortcut

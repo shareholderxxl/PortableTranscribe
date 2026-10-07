@@ -1,6 +1,6 @@
-# Building PortableWhisper MSI Installer
+# Building PortableTranscribe MSI Installer
 
-This guide explains how to build a standalone MSI installer for PortableWhisper that includes both the frontend and backend.
+This guide explains how to build a standalone MSI installer for PortableTranscribe that includes both the frontend and backend.
 
 ## Prerequisites
 
@@ -36,7 +36,7 @@ This will:
 3. Build the Tauri frontend with the bundled backend
 4. Create an MSI installer (~660MB with CUDA libraries)
 
-**Output:** `frontend\src-tauri\target\release\bundle\msi\PortableWhisper_0.1.0_x64_en-US.msi`
+**Output:** `frontend\src-tauri\target\release\bundle\msi\PortableTranscribe_0.1.0_x64_en-US.msi`
 
 **Note:** The backend executable must be named `whisper-backend-x86_64-pc-windows-msvc.exe` for Tauri to recognize it as a sidecar.
 
@@ -204,7 +204,7 @@ To reduce size:
 
 1. Build the MSI: `BUILD_INSTALLER.bat`
 2. Create a GitHub release
-3. Upload the MSI file: `PortableWhisper_0.1.0_x64_en-US.msi`
+3. Upload the MSI file: `PortableTranscribe_0.1.0_x64_en-US.msi`
 4. Users download and install directly
 
 ### Release Checklist

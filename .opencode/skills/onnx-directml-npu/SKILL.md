@@ -1,7 +1,7 @@
 # ONNX Runtime + DirectML — NPU-Beschleunigung für Windows STT
 
 ## Ziel
-Das PortableWhisper-Backend nutzt **onnx-asr** mit **onnxruntime-directml** als optionalem GPU/NPU-Backend. Dadurch werden NPUs von Intel (Core Ultra) und AMD (Ryzen AI) unter Windows 11 nativ und stromsparend angesteuert. Modell: `nvidia/parakeet-tdt-0.6b-v3` (ONNX int4).
+Das PortableTranscribe-Backend nutzt **onnx-asr** mit **onnxruntime-directml** als optionalem GPU/NPU-Backend. Dadurch werden NPUs von Intel (Core Ultra) und AMD (Ryzen AI) unter Windows 11 nativ und stromsparend angesteuert. Modell: `nvidia/parakeet-tdt-0.6b-v3` (ONNX int4).
 
 ---
 
@@ -210,7 +210,7 @@ async def startup():
     global session
     model_path = get_model_path()
     session = create_dml_session(model_path)
-    print(f"[PortableWhisper] ONNX-Backend gestartet. NPU: {detect_npu()}")
+    print(f"[PortableTranscribe] ONNX-Backend gestartet. NPU: {detect_npu()}")
 
 @app.post("/transcribe")
 async def transcribe(file: UploadFile = File(...)):

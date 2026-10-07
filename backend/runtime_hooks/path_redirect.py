@@ -1,5 +1,5 @@
 """
-Pfad-Management für PortableWhisper.
+Pfad-Management für PortableTranscribe.
 
 Lenkt alle Dateioperationen (Modelle, temporäre Audio-Chunks, Logs, GPU-Libs,
 HF-Cache) in den direkten App-Ordner auf eine flache Struktur:
@@ -21,7 +21,7 @@ import os
 import sys
 from pathlib import Path
 
-APP_NAME = "PortableWhisper"
+APP_NAME = "PortableTranscribe"
 
 
 def get_appdata_dir() -> Path:

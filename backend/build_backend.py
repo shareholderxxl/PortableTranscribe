@@ -1,5 +1,5 @@
 """
-PyInstaller build script for PortableWhisper backend
+PyInstaller build script for PortableTranscribe backend
 This creates a standalone executable that includes Python and all dependencies
 """
 

@@ -1,4 +1,4 @@
-# Master-Prompt: PortableWhisper Refactoring, NPU Optimization & Handy-UI Integration
+# Master-Prompt: PortableTranscribe Refactoring, NPU Optimization & Handy-UI Integration
 
 > **Status (Phase 1):** In Umsetzung auf Branch `phase-1`. Details und
 > Entscheidungen siehe `PHASE1_PLAN.md` und `AGENTS.md`.
@@ -13,7 +13,7 @@
 > - Build-Artefakt: nur portables ZIP (kein MSI/NSIS), gebaut via GitHub Actions.
 
 ## Rolle & Ziel
-Du bist ein erfahrener Systems Engineer und AI Developer. Unser Ziel ist es, das kompakte Repository `PortableWhisper` (Tauri-Frontend + Python-FastAPI-Backend) zu klonen und in eine kommerziell nutzbare, komplett portable STT-Anwendung ohne Admin-Rechte zu verwandeln. 
+Du bist ein erfahrener Systems Engineer und AI Developer. Unser Ziel ist es, das kompakte Repository `PortableTranscribe` (Tauri-Frontend + Python-FastAPI-Backend) zu klonen und in eine kommerziell nutzbare, komplett portable STT-Anwendung ohne Admin-Rechte zu verwandeln. 
 
 Die Benutzeroberfläche für die Textkorrektur soll vom Open-Source-Projekt `cjpais/handy` inspiriert sein, die Ausführung des LLMs erfolgt jedoch – anders als bei Handy – vollkommen autark und lokal direkt in unserem eigenen, gebündelten Python-Backend (Zero-Dependency für den Endnutzer).
 
@@ -109,7 +109,7 @@ deutsche Qualität**. GPU/NPU-Beschleunigung ist optional, nicht zwingend nötig
 
 ## DEINE ERSTE AUFGABE (Phase 1)
 
-1. Analysiere das geklonte `PortableWhisper`-Repository.
+1. Analysiere das geklonte `PortableTranscribe`-Repository.
 2. Zeige mir, wie wir die `tauri.conf.json` anpassen müssen, um das Python-Backend als Sidecar zu registrieren und die App als portables ZIP zu packen.
 3. Erkläre mir, welche PyInstaller-Konfiguration nötig ist, um das Modell `primeline/whisper-large-v3-german` beim ersten App-Start sauber in den lokalen AppData-Ordner des Nutzers herunterzuladen.
 

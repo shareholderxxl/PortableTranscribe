@@ -1,4 +1,4 @@
-# Tauri Portable Sidecar — PortableWhisper
+# Tauri Portable Sidecar — PortableTranscribe
 
 ## Ziel
 Das FastAPI-Backend (mit Parakeet TDT v3 ONNX-Modell) wird via **PyInstaller** in eine eigenständige `whisper-backend.exe` gefreezt und als **Tauri-Sidecar** registriert. Die App wird als portables ZIP-Archiv ohne Admin-Rechte ausgeliefert.
@@ -9,7 +9,7 @@ Das FastAPI-Backend (mit Parakeet TDT v3 ONNX-Modell) wird via **PyInstaller** i
 
 ### 1.1 Spezifikationsdatei: `whisper-backend.spec`
 
-Die `.spec`-Datei muss im Root des Python-Backend-Ordners liegen. Wichtig: Das Modell wird **nicht** in die `.exe` eingebettet, sondern beim ersten App-Start per `huggingface_hub` nach `%LOCALAPPDATA%/PortableWhisper/models/` heruntergeladen.
+Die `.spec`-Datei muss im Root des Python-Backend-Ordners liegen. Wichtig: Das Modell wird **nicht** in die `.exe` eingebettet, sondern beim ersten App-Start per `huggingface_hub` nach `%LOCALAPPDATA%/PortableTranscribe/models/` heruntergeladen.
 
 ```python
 # whisper-backend.spec
@@ -82,12 +82,12 @@ Ergebnis: `dist/whisper-backend/whisper-backend.exe`
 Erstelle `runtime_hooks/path_redirect.py`:
 
 ```python
-"""Lenkt alle Dateioperationen auf %LOCALAPPDATA%/PortableWhisper/ um."""
+"""Lenkt alle Dateioperationen auf %LOCALAPPDATA%/PortableTranscribe/ um."""
 import os
 import sys
 from pathlib import Path
 
-APP_NAME = "PortableWhisper"
+APP_NAME = "PortableTranscribe"
 
 def _get_appdata_dir() -> Path:
     """Ermittelt den lokalen AppData-Ordner des Benutzers."""
@@ -133,13 +133,13 @@ MODEL_ID = "primeline/whisper-large-v3-german"
 model_path = os.environ["HUGGINGFACE_HUB_CACHE"]
 
 if not os.listdir(model_path):
-    print(f"[PortableWhisper] Lade Modell {MODEL_ID} herunter...")
+    print(f"[PortableTranscribe] Lade Modell {MODEL_ID} herunter...")
     snapshot_download(
         repo_id=MODEL_ID,
         cache_dir=model_path,
         local_files_only=False,
     )
-    print("[PortableWhisper] Modell-Download abgeschlossen.")
+    print("[PortableTranscribe] Modell-Download abgeschlossen.")
 ```
 
 ---
@@ -250,7 +250,7 @@ Für ein reines ZIP (ohne Installer) kann ein Build-Skript verwendet werden:
 ```powershell
 # build-portable.ps1 — nach `tauri build`
 $releaseDir = "src-tauri/target/release"
-$appName = "PortableWhisper"
+$appName = "PortableTranscribe"
 $outputZip = "$appName-portable.zip"
 
 Compress-Archive -Path @(
@@ -266,8 +266,8 @@ Write-Host "Portables ZIP erstellt: $outputZip"
 
 ```text
 nach Entpacken:
-PortableWhisper/
-├── PortableWhisper.exe        # Tauri-Hauptapp
+PortableTranscribe/
+├── PortableTranscribe.exe        # Tauri-Hauptapp
 ├── binaries/
 │   └── whisper-backend.exe    # Sidecar (vom Tauri gestartet)
 └── resources/                 # Optional
@@ -291,8 +291,8 @@ PortableWhisper/
 ## 6. Verifikation
 
 Nach dem Build:
-1. ZIP entpacken → `PortableWhisper.exe` ohne Admin starten
+1. ZIP entpacken → `PortableTranscribe.exe` ohne Admin starten
 2. Tauri startet `whisper-backend.exe` als Sidecar (unsichtbar)
-3. Backend lädt `primeline/whisper-large-v3-german` bei Bedarf nach `%LOCALAPPDATA%/PortableWhisper/models/hub/`
+3. Backend lädt `primeline/whisper-large-v3-german` bei Bedarf nach `%LOCALAPPDATA%/PortableTranscribe/models/hub/`
 4. API unter `http://127.0.0.1:8765` erreichbar
 5. Kein UAC-Prompt, kein separates Python/Node.js nötig

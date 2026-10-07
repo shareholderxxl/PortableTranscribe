@@ -1,6 +1,6 @@
 @echo off
 echo ====================================
-echo PortableWhisper GPU Diagnostic Tool
+echo PortableTranscribe GPU Diagnostic Tool
 echo ====================================
 echo.
 
@@ -59,7 +59,7 @@ if exist "%~dp0gpu_libs\nvidia" (
     echo   Location: %~dp0gpu_libs\nvidia
     echo.
     echo   ACTION REQUIRED:
-    echo   1. Run PortableWhisper
+    echo   1. Run PortableTranscribe
     echo   2. Go to Settings
     echo   3. Click "Install GPU Libraries" (~600MB download)
 )

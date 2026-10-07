@@ -1,5 +1,5 @@
 """
-PortableWhisper Backend Server
+PortableTranscribe Backend Server
 FastAPI server for local speech-to-text processing
 """
 
@@ -98,7 +98,7 @@ class HealthResponse(BaseModel):
 async def lifespan(app: FastAPI):
     """Lifecycle manager for the FastAPI app"""
     logger.info("=" * 60)
-    logger.info("🚀 PortableWhisper Backend Starting...")
+    logger.info("🚀 PortableTranscribe Backend Starting...")
     logger.info("=" * 60)
     logger.info(f"Server: http://{BACKEND_HOST}:{BACKEND_PORT}")
     logger.info(f"API Docs: http://{BACKEND_HOST}:{BACKEND_PORT}/docs")
@@ -137,7 +137,7 @@ async def lifespan(app: FastAPI):
 
 # Create FastAPI app
 app = FastAPI(
-    title="PortableWhisper Backend",
+    title="PortableTranscribe Backend",
     description="Local speech-to-text processing server",
     version="1.0.0",
     lifespan=lifespan
@@ -158,7 +158,7 @@ app.add_middleware(
 async def root():
     """Root endpoint"""
     return {
-        "app": "PortableWhisper Backend",
+        "app": "PortableTranscribe Backend",
         "version": "1.0.0",
         "status": "running"
     }

@@ -35,7 +35,7 @@ That's it — no installation, no setup wizard.
 
 ## 🧠 Model Setup
 
-PortableTranscribe ships **without a bundled model** to keep the download small (~105 MB).
+PortableTranscribe ships **without a bundled model** to keep the download small (~66 MB).
 You place the ONNX model files yourself, once.
 
 ### Required files in `model/`
@@ -88,7 +88,7 @@ Settings (F9 default, language, microphone, theme, GPU) are available from the
 - **OS:** Windows 10 / 11 (64-bit)
 - **RAM:** 8 GB minimum, 16 GB recommended
 - **Microphone:** built-in or external
-- **Disk:** ~520 MB (app + model)
+- **Disk:** ~475 MB (app + model)
 
 ## 🛠️ Troubleshooting
 
